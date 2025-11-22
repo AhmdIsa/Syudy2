@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع تعليمي عن Git و GitHub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        nav button {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        nav button:hover {
+            background-color: #007bff;
+        }
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #007bff;
+        }
+        code {
+            background-color: #eee;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>تعلم Git و GitHub</h1>
+    <p>موقع تعليمي يوضح أهم الأوامر الأساسية ويتيح إضافة دروس جديدة</p>
+</header>
+
+<nav>
+    <button onclick="showLesson(1)">الدرس الأول</button>
+    <!-- يمكنك إضافة المزيد من الدروس هنا لاحقًا -->
+</nav>
+
+<main id="content">
+    <h2>مرحبًا بك في الموقع التعليمي!</h2>
+    <p>اضغط على أي درس في الأعلى لعرض محتواه.</p>
+</main>
+
+<footer>
+    &copy; 2025 جميع الحقوق محفوظة
+</footer>
+
+<script>
+    const lessons = {
+        1: `
+        <h2>الدرس الأول: أوامر Git و GitHub الأساسية</h2>
+        <h3>أوامر Git:</h3>
+        <ul>
+            <li><code>git init</code> : إنشاء مستودع Git جديد.</li>
+            <li><code>git clone &lt;url&gt;</code> : نسخ مستودع موجود من GitHub.</li>
+            <li><code>git status</code> : عرض حالة الملفات في المستودع.</li>
+            <li><code>git add &lt;filename&gt;</code> : إضافة ملفات إلى المرحلة المؤقتة (Staging).</li>
+            <li><code>git commit -m "رسالة"</code> : حفظ التغييرات مع رسالة توضيحية.</li>
+            <li><code>git branch</code> : عرض جميع الفروع.</li>
+            <li><code>git checkout &lt;branch&gt;</code> : الانتقال إلى فرع محدد.</li>
+            <li><code>git merge &lt;branch&gt;</code> : دمج فرع آخر في الفرع الحالي.</li>
+        </ul>
+        <h3>أوامر GitHub:</h3>
+        <ul>
+            <li><code>git remote add origin &lt;url&gt;</code> : ربط المستودع المحلي بمستودع GitHub.</li>
+            <li><code>git push -u origin main</code> : رفع التغييرات إلى GitHub لأول مرة.</li>
+            <li><code>git push</code> : رفع التغييرات إلى GitHub.</li>
+            <li><code>git pull</code> : جلب التحديثات من GitHub إلى المستودع المحلي.</li>
+        </ul>
+        `
+        // لاحقًا يمكنك إضافة دروس أخرى بنفس الطريقة
+    };
+
+    function showLesson(id) {
+        document.getElementById('content').innerHTML = lessons[id] || "<p>هذا الدرس غير موجود.</p>";
+    }
+</script>
+
+</body>
+</html>
